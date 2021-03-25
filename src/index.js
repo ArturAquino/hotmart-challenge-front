@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App/App';
 import reportWebVitals from './reportWebVitals';
+
+/**
+ * Axios
+ */
+import axios from 'axios'
+
+/**
+ * Setting base URL of axios
+ */
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL
 
 ReactDOM.render(
   <React.StrictMode>
