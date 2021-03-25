@@ -1,16 +1,19 @@
-import React from 'react';
+import React from 'react'
+
 import { useStyles } from './styled'
 
-export default function Description() {
-	const classes = useStyles();
+export default function Description(props) {
+	const classes = useStyles()   
+
 	return (
+        props &&
 		<div style={{margin: '0 auto 0 0'}}>
 			<div className={classes.lineBlock}>
 				<p className={classes.textLabel}>
 					Nome
 				</p>
 				<p className={classes.textDescription}>
-					Nome do Solicitante
+					{props.nameCollaborator}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -18,7 +21,7 @@ export default function Description() {
 					E-mail
 				</p>
 				<p className={classes.textDescription}>
-					Email do Solicitante
+					{props.emailCollaborator}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -26,7 +29,7 @@ export default function Description() {
 					Justificativa
 				</p>
 				<p className={classes.textDescription}>
-					Justificativa
+					{props.justification}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -34,7 +37,7 @@ export default function Description() {
 					Finalidade
 				</p>
 				<p className={classes.textDescription}>
-					Finalidade
+					{props.purpose}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -42,7 +45,7 @@ export default function Description() {
 					Projeto
 				</p>
 				<p className={classes.textDescription}>
-					Projeto
+					{props.project}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -50,7 +53,7 @@ export default function Description() {
 					Data
 				</p>
 				<p className={classes.textDescription}>
-					Data
+					{props.createdOn}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -58,7 +61,7 @@ export default function Description() {
 					Quantidade
 				</p>
 				<p className={classes.textDescription}>
-					Quantidade de pessoas
+					{props.amountPeople}
 				</p>
 			</div>
 			<div className={classes.lineBlock}>
@@ -66,7 +69,8 @@ export default function Description() {
 					Inclui café da manhã
 				</p>
 				<p className={classes.textDescription}>
-					Inclui café da manhã
+					{props.breakfast}
+
 				</p>
 			</div>
 		</div>

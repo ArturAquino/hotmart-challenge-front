@@ -20,6 +20,11 @@ export const colorDarkBlue4 = '#32363b'
 // Green palette
 export const colorLightGreen1 = '#00d7ce'
 export const colorLightGreen2 = '#ecf8f8'
+export const colorLightGreen3 = '#4acc82'
+export const colorLightGreen4 = '#009d43'
+export const colorLightGreen5 = '#edfff5'
+export const colorLightGreen6 = '#006e2f'
+
 
 //Basic colors
 export const colorBlack = '#000'

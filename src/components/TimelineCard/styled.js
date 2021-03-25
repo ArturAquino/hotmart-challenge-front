@@ -50,5 +50,16 @@ export const useStyles = makeStyles((theme) => ({
     date: {
         color: colorDarkGray1,
         textAlign: 'center'
-    }
+    },
+    status: props => ({
+        width: 98,
+        height: 20,
+        borderRadius: 16,
+        backgroundColor: props.backgroundColor,
+        border: `1px solid ${props.borderColor || props.color}`,
+        color: props.color,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        fontSize: 14
+    })
 }));

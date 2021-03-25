@@ -12,7 +12,7 @@ import {
     colorLightBlue2, colorLightBlue1
 } from '../../assets/styles/colors'
 
-export default function RegisterExpenses() {
+export default function RegisterExpenses({close}) {
 
 //     {
 //    expenseTypeCode: 'hotel-fee', // 'hotel-fee', 'food' or 'transport'
@@ -121,7 +121,8 @@ export default function RegisterExpenses() {
                     <Grid item xs={12}>
                         <Grid container justify='flex-end' alignItems='center' spacing={1}>
                             <Grid item xs={6} md={2}>
-                                <CustomButton label='Cancelar' propsStyle={cancelButtonProps} action/>
+                                <CustomButton label='Cancelar'
+                                    propsStyle={cancelButtonProps} action={close}/>
                             </Grid>
                             <Grid item xs={6} md={2}>
                                 <CustomButton label='Salvar' propsStyle={saveButtonProps} action/>

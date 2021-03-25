@@ -3,7 +3,9 @@ import {
     colorLightGray1, colorLightGray2,
     colorLightBlue1, colorDarkGray1,
     colorDarkBlue3, colorDarkBlue4,
-    coolGray, colorDarkBlue1
+    coolGray, colorDarkBlue1,
+    colorLightGreen3, colorLightGreen4,
+    colorLightGreen5
 } from '../../assets/styles/colors'
 
 export const useStyles = makeStyles(() => ({
@@ -20,6 +22,12 @@ export const useStyles = makeStyles(() => ({
         backgroundColor: props.backgroundColor,
         textAlign: 'center'
     }),
+    statusClose: {
+        color: colorLightGreen4,
+        border: `1px solid ${colorLightGreen4}`,
+        backgroundColor: colorLightGreen5,
+        textAlign: 'center'
+    },
 	image: {
 		width: 128,
 		height: 128,
@@ -104,6 +112,11 @@ export const useStyles = makeStyles(() => ({
     },
     extractDatail: {
         color: colorDarkBlue3,
+        fontWeight: 'bold',
+        marginBottom: 0
+    },
+    extractDatailReturned: {
+        color: colorLightGreen3,
         fontWeight: 'bold',
         marginBottom: 0
     },
