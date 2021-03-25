@@ -4,7 +4,6 @@ import Paper from '@material-ui/core/Paper'
 import format from 'date-fns/format'
 
 import { useStyles } from './styled'
-// import {  } from '../../assets/styles/colors'
 import { currency } from '../../utils/formatters'
 
 import asterisco from '../../assets/images/asterisco.png'

@@ -19,5 +19,8 @@ export const getSidebarData = () => {
 }
 
 export const sendExpenseData = (body) => {
-    return axios.put('/api/expense/add', body)
+
+    return axios.put('/api/expense/add', body).then((response) => {
+        return response
+    }).catch(error => { throw error })
 }

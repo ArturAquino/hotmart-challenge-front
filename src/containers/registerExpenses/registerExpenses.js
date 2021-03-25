@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper'
 import CardContent from '@material-ui/core/CardContent'
 import { ComboBox, Input, DatePickerCustom, AttachArea, CustomButton } from '../../components/index'
 import { useStyles } from './styled'
+import { sendExpenseData } from '../../services/services'
 
 import { expenseCodes, currencyCodeData } from '../../utils/mockData'
 
@@ -48,9 +49,31 @@ export default function RegisterExpenses({close}) {
     const [amountTotal, setAmountTotal] = useState(null)
     const [amountSpent, setAmountSpent] = useState(null)
     const [notes, setNotes] = useState(null)
+    const [resourceUrl, setResourceUrl] = useState(null)
     const [cardDate, setCardDate] = useState(new Date())
 
 	const classes = useStyles()
+
+    const sendExpense = () => {
+        const body = {
+            expenseTypeCode,
+            currencyCode,
+            amountTotal,
+            amountSpent,
+            notes,
+            resourceUrl,
+            cardDate
+        }
+
+        if (expenseTypeCode !== '' && currencyCode !== '' &&
+            amountTotal !== null && amountSpent !== null &&
+            notes !== null && resourceUrl && cardDate) {
+
+            sendExpenseData(body).then((response) => {
+                console.log('teste', response)
+            })
+        }
+    }
 
     const fieldValues = () => {
         return (
@@ -82,7 +105,7 @@ export default function RegisterExpenses({close}) {
                         <h2>Adicionar Despesa</h2>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <AttachArea />
+                        <AttachArea attach={setResourceUrl}/>
                     </Grid>
                     <Grid item xs={12} sm={6} >
                         <Grid container spacing={3}>
@@ -125,7 +148,7 @@ export default function RegisterExpenses({close}) {
                                     propsStyle={cancelButtonProps} action={close}/>
                             </Grid>
                             <Grid item xs={6} md={2}>
-                                <CustomButton label='Salvar' propsStyle={saveButtonProps} action/>
+                                <CustomButton label='Salvar' propsStyle={saveButtonProps} action={sendExpense}/>
                             </Grid>
                         </Grid>
                     </Grid>
